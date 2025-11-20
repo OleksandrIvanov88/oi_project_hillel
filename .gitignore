@@ -1,0 +1,99 @@
+# Build directories
+build/
+out/
+cmake-build-*/
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# CMake
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Google Test (if building it)
+googletest-build/
+gtest/
+gmock/
+
+# Backup files
+*.bak
+*.orig
+
+# Package managers
+conan.lock
+vcpkg_installed/
+
+# Profiling output
+gmon.out
+bb.out
+
+# Coverage files
+*.gcov
+*.gcno
+*.gcda
+lcov.info
+coverage/
+
+# Sanitizer output
+*.san
