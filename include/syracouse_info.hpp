@@ -29,7 +29,6 @@ public:
 
 private:
     static constexpr uint64_t MAX_SAFE_ODD{(std::numeric_limits<uint64_t>::max() - 1) / 3};
-    size_t cache_size_{};
     std::vector<std::atomic<uint16_t>> cache_{};
 
     SyracuseInfo FindLongestSequenceInRange(uint64_t start, uint64_t end);

@@ -8,16 +8,13 @@
 
 namespace syracuse {
 
-SyracuseCalculator::SyracuseCalculator(size_t cache_size)
-    : cache_size_{cache_size}, cache_(cache_size) {
-}
-
+SyracuseCalculator::SyracuseCalculator(size_t cache_size) : cache_(cache_size) {}
 
 uint16_t SyracuseCalculator::CalculateSequenceLength(uint64_t n) {
     if (n == 0) return 0;
     if (n == 1) return 1;
 
-    if (n < cache_size_ && cache_[n].load() != 0) {
+    if (n < cache_.size() && cache_[n].load() != 0) {
         return cache_[n].load();
     }
 
@@ -25,7 +22,7 @@ uint16_t SyracuseCalculator::CalculateSequenceLength(uint64_t n) {
     uint16_t length{1};
     
     while (n != 1) {
-        if (n < cache_size_ && cache_[n].load() != 0) {
+        if (n < cache_.size() && cache_[n].load() != 0) {
             length += cache_[n].load() - 1;
             break;
         }
@@ -37,7 +34,7 @@ uint16_t SyracuseCalculator::CalculateSequenceLength(uint64_t n) {
         ++length;
     }
 
-    if (original_n < cache_size_) {
+    if (original_n < cache_.size()) {
         cache_[original_n].store(length);
     }
 

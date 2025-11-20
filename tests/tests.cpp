@@ -40,11 +40,11 @@ TEST_F(SyracuseTest, EdgeCases) {
     EXPECT_EQ(calculator.CalculateSequenceLength(1), 1);
 }
 
-// TEST_F(SyracuseTest, LongestSequence) {
-//     SyracuseInfo result = calculator.FindLongestSequence(700'000'000);
-//     EXPECT_EQ(result.start_value, 670617279);
-//     EXPECT_EQ(result.sequence_length, 987);
-// }
+TEST_F(SyracuseTest, LongestSequence) {
+    SyracuseInfo result = calculator.FindLongestSequence(100'000'000);
+    EXPECT_EQ(result.start_value, 63728127);
+    EXPECT_EQ(result.sequence_length, 950);
+}
 
 class SyracusePralelTest : public ::testing::Test {
 protected:
@@ -105,13 +105,3 @@ TEST_F(SyracusePralelTest, PralelTestExpected1B) {
     EXPECT_EQ(result.start_value, 670617279);
     EXPECT_EQ(result.sequence_length, 987);
 }
-
-// TEST_F(SyracusePralelTest, PralelTestExpected10B) {
-//     SyracuseInfo result{};
-//     {
-//         LOG_DURATION("LargeRangeTest Duration for range up to 10'000'000'000");
-//         result = calculator.FindLongestSequenceParalel(10'000'000'000, THREADS_AMOUNT);
-//     }
-//     EXPECT_EQ(result.start_value, 9780657630);
-//     EXPECT_EQ(result.sequence_length, 1133);
-// }
